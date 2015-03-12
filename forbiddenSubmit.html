@@ -1,0 +1,13 @@
+<script>
+    $(document).ready(function(){
+        $('#submit').click(function(){
+            $('#submit').attr('disabled','disabled');
+            $.ajax({
+            
+            });
+            return false;
+        })
+    })
+</script>
+
+<!-- 绑定提交按钮的单击事件，在该事件函数内通过attr禁用该提交按钮的单击功能从而达到目的 --!>

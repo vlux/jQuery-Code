@@ -1,0 +1,25 @@
+<script>
+    window.onload = function(){
+        var o = $('#input-defaultText');
+        o.setAttribute('valueCache',o.value);
+        o.onblur = function(){
+            if(o.value == ""){
+                o.valueCache = "";
+                o.value = o.tips;
+            }else
+                o.valueCache = o.value;
+        };
+        o.onfocus = function(){
+            o.value = o.valueCache;
+            var e = event.srcElement;
+            var r = createTextRange();
+            r.moveStart('character',e.value.length);
+            r.collapse(true);
+            r.select();
+        };
+        o.onblur();
+    }
+</script>
+<body>
+    <input id = "input-defaultText" type = 'text' name = "" value=""/>
+</body>

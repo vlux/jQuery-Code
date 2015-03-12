@@ -1,0 +1,28 @@
+<script>
+$(function(){
+    jQuery.fn.maxLength = function(max){
+        return this.each(function(){
+            var type = this.tagName.toLowerCase();
+            var inputType = this.typ ? this.type.toLowerCase():null;
+            if(type == "input" && inputType == "text" || inputType == "password")
+                this.maxLength = max;
+            else if (type == 'textarea'){
+                this.onkeypress = function(e){
+                    var ob = e|| envent;
+                    var keyCode = ob.keyCode;
+                };
+                this.onkeyup = function(){
+                    if(this.value.length > max)
+                        this.value = this.value.substring(0,max);
+                };
+            }
+        });
+    };
+    $('#id-button-maxLen').click(function(){
+        var vMaxLen = $('input#id-text-maxLen').val();
+        var iMaxLen = parseInt(vMaxLen);
+        $('#id-maxLenTextarea').maxLength(iMaxLen);
+        $('#div-log').html($('#div-log').html()+'<p>'+'Max is :' + vMaxLen + '</p>');
+    });
+});
+</script>

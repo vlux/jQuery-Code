@@ -1,0 +1,32 @@
+<script>
+    $(function(){
+        $('#draggable').draggable();
+        $('#droppable').droppable({
+            drop:function(event,ui){
+                $(this).addClass('ui-state-highlight').find('p').html('Done!');
+            }
+        });
+    });
+</script>
+<body>
+    <div id = 'draggable' class= 'ui-widget-content'>
+        <p>Drag to Here</p>
+    </div>
+    <div id = 'droppable' class = 'ui-widget-header'>
+        <p>Please put here</p>
+    </div>
+</body>
+
+<script>
+    $(function(){
+        $('#draggable,$draggable-nonvalid').draggable();
+        $('#droppable').droppable({
+            accept:'#draggable',
+            activeClass:'ui-state-hover',
+            hoverClass:'ui-state-active',
+            drop:function(event,ui){
+                $(this).addClass('ui-state-highlight').find('p').html('Done!');
+            }
+        });
+    });
+</script>

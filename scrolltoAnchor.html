@@ -1,0 +1,27 @@
+<script type = "text/javascript">
+    $(document).ready(function(){
+        jQuery.scrollTo = function(scrolldom,scrolltime){
+           $(scrolldom).click(function(){
+               var scrollToDom = $(this).attr('page-scroll');
+               $(this).addClass('thisscroll').siblings().removeClass('thisscroll');
+               $('html,body').animate(
+                   {
+                        scrollTop:$(scrollToDom).offset().top
+                   },
+                   scrolltime
+               );
+               return false;
+        });
+        };
+        $.scrollTo("#scrollnav a",100)
+    });
+</script>
+<body>
+    <h2 id = 'h2-caption'></h2>
+    <hr><br>
+    <div class = "scrollnav" id = "scrollnav">
+        <a href = "#" page-scroll = "scrolltoTop"></a>
+        <a href = "#" page-scroll = "scrolltoMid"></a>
+        <a href = "#" page-scroll = "scrolltoEnd"></a>
+    </div>
+</body>

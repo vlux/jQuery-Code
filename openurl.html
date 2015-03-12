@@ -1,0 +1,20 @@
+<script>
+    $(document).ready(function(){
+        $('.jqopenurl').attr({target:"_blank"});
+        $('a[rel = ext]').click(function(){
+            $(this).attr('attr','_blank');
+        });
+    });
+    
+    function open_url(){
+        window.open("");
+        window.open("");
+    }
+</script>
+<body>
+    <p><a hre = "" class = "jqopenurl" title = "title">Link to ...</a></p>
+    <p><a hre = "" rel = "ext" title = "title">Link to ...</a></p>
+    <form>
+        <input type = "button" value = "Open .." onclick = "open_url()"/>
+    </form>
+</body>

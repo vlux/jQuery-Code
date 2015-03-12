@@ -1,0 +1,15 @@
+<script>
+    function changeFontSize(fontSize){
+        var divNode = document.getElementsByTagName('div')[0];
+        divNode.style.fontSize = fontSize;
+        <!-- Object.style.fontSize = value --！>
+    }
+</script>
+<body>
+    <a href = "javascript:void(0)" onclick = "changeFontSize('20px')" class = "max">Big</a>
+    <a href = "javascript:void(0)" onclick = "changeFontSize('16px')" class = "max">Midlde</a>
+    <a href = "javascript:void(0)" onclick = "changeFontSize('12px')" class = "max">Small</a>
+    <div>
+        Content <br/>
+    </div>
+</body>

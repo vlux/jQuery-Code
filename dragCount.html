@@ -1,0 +1,27 @@
+<script>
+    $(function(){
+        var $start_counter = $('#event-start'),
+            $drag_count = $('#event-drag'),
+            $stop_count = $('#event-stop'),
+            counts = [0,0,0];
+        $('#draggable').draggable({     //关联拖拽函数
+            start:function(){
+                counts[0]++;
+                updateCounterStatus($start_counter,counts[0]);
+            },
+            drag:function(){
+                counts[1]++;
+                updateCounterStatus($drag_count,counts[1]);
+            },
+            stop:function(){
+                counts[2]++;
+                updateCounterStatus($stop_count,counts[2]);
+            }
+        });
+        function updateCounterStatus($event_counter,new_count){
+            if(!$event_counter.hasClass('ui-state-hover'))
+                $event_counter.addClass('ui-state-hover').siblings().removeClass('ui-state-hover')//移除相同层次的其他CSS类
+            $('span.count',$event_counter).text(new_count);
+        }
+    })
+</script>

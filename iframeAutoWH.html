@@ -1,0 +1,4 @@
+$('#iframe-content').load(function(){
+    var vHeight = $(this).contents.find('body').height();
+    $(this).height(vHeight < 300? 300:vHeight);
+});

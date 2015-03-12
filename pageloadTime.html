@@ -1,0 +1,24 @@
+<script>
+    var start_time = new Date();
+    var end_time = "";
+    var t = setInterval(function(){
+        if(document.readyState =="complete")
+            calTotalTime();
+    },500);
+    
+    function calTotalTime(){
+        end_time = new Date();
+        vat TotalTime = end_time.getTime() - start_time.getTime();
+        $("#div-log").html($("#div-log").html() + "<p>Sum :" + TotalTime +"ms</p>");
+        clearInterval(t);
+    }
+    
+</script>
+
+<!--document.readyState的状态如下:
+    UNINITIALIZED(0)：XML对象被产生，但没有任何文件被加载。
+    LOADING(1):加载程序进行中，但文件尚未开始解析。
+    LOADED(2)：部分的文件已经加载且进行解析，但对象模型尚未成效。
+    INTERACTIVE(3):仅对已加载的部分文件有效，在此情况下，对象模型是有效但只读的。
+    COMPLETED(4)：文件已完全加载，代表加载成功
+--!>
