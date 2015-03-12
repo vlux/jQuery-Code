@@ -1,0 +1,34 @@
+<script>
+$(document).ready(function(){
+	$('.tablo').selectable({
+		filter:'tr',
+		selected:function(event,ui){
+			$('.ui-selected',this).each(function(a,b){
+				$('.checkbox',b).attr('checked',true);
+			});
+		},
+		stop:function(event,ui){
+			var result = $("#plate").empty().html('You choose"'+$(this).find('.ui-selected').map(function(i){
+				return i;
+			}).get().join(','));
+		}
+	})
+})
+</script>
+<body>
+	<table class = "tablo">
+		<tr class = "ui-widget-content">
+			<td><input type = "checkbox" class = "checkbox"/></td>
+			<td>Choose 1</td>
+		</tr>
+
+		<tr class = "ui-widget-content">
+			<td><input type = "checkbox" class = "checkbox"/></td>
+			<td>Choose 2</td>
+		</tr>
+		
+	</table>	
+	<div id = "plate">
+		Result:
+	</div>
+</body>

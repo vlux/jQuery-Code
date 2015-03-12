@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	$(function(){
+			$("#selectable").selectable({
+			stop:function(){
+			var result = $('#select-result').empty();
+			$('.ui-selected',this).each(function(){
+				var index = $('#selectable li').index(this);
+				result.append('#' + (index + 1) + '' + $(this).html());
+				alter(this);
+				})
+			}
+		})
+	})
+</script>
+<body>
+	<ol id = 'selectable'>
+		<li class="ui-widget-content">A</li>
+		<li class="ui-widget-content">B</li>
+	</ol>
+</body>

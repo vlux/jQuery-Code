@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	$(function(){
+		$("$fruits").selectable({
+			filter:'tbody tr',
+			stop:function(event,ui){
+				var result = $('#plate').empty().html('You choose:' + $(this).find('.ui-selected').map(function({
+					return this.id;
+				}).get().join(',')));
+			}
+		})
+	})
+	//调用map函数循环选中的结果，将结果添加到div中
+</script>
+<body>
+	<table id = 'fruits'>
+		<thead>
+			<tr><th>Name</th><th>Color</th><th>Flavor</th></tr>
+		</thead>
+		<tbody>
+			<tr id = "Apple"><td>Apple</td><td>Green</td><td>Sweet</td></tr>
+		</tbody>
+	</table>
+	<div id ="plate">
+		Result:
+	</div>
+</body>
