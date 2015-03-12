@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	(function($){
+		var cache = [];
+		$preLoadImages = function(){
+			var args_len = arguments.length;
+			for (var i = args_len;i--;){
+				var cacheImage = document.createElement('img');
+				cacheImage.src = arguments[i];
+				cache.push(cacheImage);
+			}
+		}
+	})
+</script>
+
+// call the fun preLoadIamges('image/sample1.jpg','image/sample2.jpg','image/sample3.jpg')
