@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	var beforeload = (new Date()).getTime();
+	function getPageLoadTime(){
+		var afterload = (new Date()).getTime();
+		seconds = (afterload - beforeload) / 1000;
+		$('#load_time').text('Time :' + seconds +'seconds');
+	}
+	window.onload = getPageLoadTime;
+</script>
+<body>
+	<div id = "load_time"></div>
+</body>

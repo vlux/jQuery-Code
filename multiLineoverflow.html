@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#txt').ellipsis(50);
+	});
+	(function($){
+		jQuery.fn.ellipsis = function(maxwidth){
+			this.each(function(){
+				if($(this).text().length > maxwidth){
+					$(this).text($(this).text().substring(0,maxwidth));
+					$(this).html($(this).html()+'...');
+				}
+			});
+		}
+	})(jQuery)
+</script>
+
+<!-- CSS具有text-overflow:ellipsis属性，可以实现当单行文本溢出显示区域时，显示省略号，但是这个属性不支持多行文本 !-->
