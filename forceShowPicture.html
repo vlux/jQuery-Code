@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		var mover = false;		//whether is moving
+		var currx = 0;
+		var curry = 0;
+		$('.imgtext .title').mousedown(function(eventObject){
+			mover = true;
+			currx = eventObject.pageX;
+			curry = eventObject.pageY;
+		});
+		$(window).bind('mousemove',function(eventObject){
+			if(!mover)		//if not move, return
+				return;
+			var obj = $('.imgtext');
+			mouseX = eventObject.pageX;
+			mouseY = eventObject.pageY;
+			x = obj.position().left;
+			y = obj.position().top;
+			obj.css({
+				left:x + (mouseX - currx),
+				top:y + (mouseY - curry),
+			});
+			currx = eventObject.pageX;
+			curry = eventObject.pageY;
+		});
+		$('.imgtext .title').mouseup(function(){
+			mover = false;
+		})
+	})
+</script>
