@@ -1,0 +1,21 @@
+<script>
+	$(document).ready(function(){
+		$('.countchars').each(function(){
+			var length = $(this).val().length;
+			$(this).parent.find("#charlength").html('<b>'+length+'</b>');
+			$(this).keyup(function(){
+				var new_length = $(this).val().length;
+				$(this).parent.find('charlength').html('<b>'+new_length+'</b>');
+				if(new_length >= 140)
+					$("#charlength").css('background','red');
+				else
+					$('#charlength').css('background','white');
+			})
+		})
+	})
+</script>
+<body>
+	<div>
+		<span id = "charlength"></span>
+	</div>
+</body>
