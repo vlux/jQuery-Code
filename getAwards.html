@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	var alldata = 'A,B,C,D,E,F,G,H';
+	var alldataarr = alldata.split(',');
+	var num = alldataarr.length - 1;
+	var timer;
+
+	function getrandom(min,max){
+		return parseInt(Math.random()*(max - min + 1)); 
+	} 
+	function change(){
+		$('#award').html(alldataarr[getrandom(0,num)]);
+	}
+	function start(){
+		clearInterval(timer);
+		timer = setInterval('change()',200);
+	}
+	function ok(){
+		clearInterval(timer);
+	}
+</script>
+<body>
+	<div id = 'award'>
+	</div>
+	<button onclick = "start()" accesskey = 's'>Start</button>
+	<button onclick = "ok()" accesskey = 'o'>Stop</button>
+</body>
