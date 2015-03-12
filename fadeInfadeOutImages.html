@@ -1,0 +1,9 @@
+<script>
+	$(document).ready(function(){
+		$('#img img').mouseover(function(){
+			$('#img img').not(this).animate({opacity:0.1},400);
+		}).mouseout(function(){
+			$('#img img').animate({opacity:1},400);
+		});
+	});
+</script>
