@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	var i = 1;
+	$(document).ready(function(){
+		$(".j_del").live('click',function(){
+			$(this).parent().parent().eq(0).remove();		//删除当前行
+		});
+		$(".j_add").live('click',function(){
+			$(this).parent().parent().after("<tr><td>New Row" + i + "</td><td><input class =\"j_add\" type = button value =' '/>
+				<input type= button class=\"j_del\" value ="" /></td></tr>");
+			i++;
+		})
+	})
+</script>
+<body>
+	<div>
+		<table>
+			<tr>
+				<td></td>
+				<td>
+					<input type = "button" class = "j_add" value="Add next"/>
+					<input type = "button" class = "j_del" value="Del Now"/>
+			</tr>
+		</table>
+	</div>
+</body>
