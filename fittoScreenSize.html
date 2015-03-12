@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	pageFor640 = "pageFor640.html";
+	pageFor800 = "pageFor800.html";
+	pageFor1024 = "pageFor1024.html";
+	pageForLarger = "pageForLarger.html";
+	showAlert = 'yes';
+	sayOnAlert = "Redirecting...";
+	var Wide = screen.width;
+	if(Wide <= 640){
+		if(showAlert =="yes")
+			alter(sayOnAlert);
+		window.location = pageFor640;
+	}else if(Wide <= 800){
+		if(showAlert =="yes")
+			alter(sayOnAlert);
+		window.location = pageFor800;
+	}else if(Wide <=1024){
+		if(showAlert =="yes")
+			alter(sayOnAlert);
+		window.location = pageFor1024;
+	}else{
+		if(showAlert =="yes")
+			alter(sayOnAlert);
+		window.location = pageForLarger;
+	}
+</script>
