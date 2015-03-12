@@ -1,0 +1,20 @@
+<html>
+<head>
+<script type="text/javascript" src = "jquery.min.js"></script>
+<script type = "text/javascript">
+	function blink(selector){
+		$(selector).fadeOut('slow',function(){
+			$(this).fadeIn('slow',function(){
+				blink(this);
+			})
+		})
+	}
+	$(document).ready(function(){
+		blink("#title")
+	})
+</script>
+</head>
+<body>
+	<h2 id = "title">Blink</h2>
+</body>
+</html>
